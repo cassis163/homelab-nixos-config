@@ -7,7 +7,7 @@
     settings = {
       http = {
         # You can select any ip and port, just make sure to open firewalls where needed
-        address = "127.0.0.1:3003";
+        address = "127.0.0.1:3000";
       };
       dns = {
         upstream_dns = [
@@ -43,5 +43,12 @@
           ];
     };
   };
+
+  networking.firewall.allowedTCPPorts = [
+    53
+    3000
+    8089
+  ]; # DNS and dashboard
+  networking.firewall.allowedUDPPorts = [ 53 ]; # DNS UDP
 
 }
