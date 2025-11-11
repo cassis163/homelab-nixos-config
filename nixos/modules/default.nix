@@ -5,9 +5,13 @@ let
     ./users.nix
     ./ssh.nix
   ];
+  services = [
+    ./adguard.nix
+  ];
 in
 {
   inherit
     base
+    services
     ;
 }
