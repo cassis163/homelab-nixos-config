@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  moduleSets = import ../../modules;
+  moduleSets = import ../modules;
 in
 {
   networking.hostName = "ca-homelab";
