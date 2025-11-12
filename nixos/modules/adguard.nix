@@ -18,7 +18,7 @@
           # sdns://AQMAAAAAAAAAElsyNjIwOmZlOjpmZV06ODQ0MyBnyEe4yHWM0SAkVUO-dWdG3zTfHYTAC4xHA2jfgh2GPhkyLmRuc2NyeXB0LWNlcnQucXVhZDkubmV0
 
           # DNS over TLS upstream
-          tls://dns.quad9.net
+          "tls://dns.quad9.net"
         ];
       };
       filtering = {
@@ -33,16 +33,10 @@
       # The following notation uses map
       # to not have to manually create {enabled = true; url = "";} for every filter
       # This is, however, fully optional
-      filters =
-        map
-          (url: {
-            enabled = true;
-            url = url;
-          })
-          [
-            "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt" # The Big List of Hacked Malware Web Sites
-            "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt" # malicious url blocklist
-          ];
+      filters = map (num: {
+        enabled = true;
+        url = "https://adguardteam.github.io/HostlistsRegistry/assets/filter_${toString num}.txt";
+      }) (builtins.genList (n: n + 1) 71);
     };
   };
 
