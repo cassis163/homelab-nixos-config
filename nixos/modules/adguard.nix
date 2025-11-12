@@ -4,6 +4,7 @@
 
   services.adguardhome = {
     enable = true;
+
     settings = {
       users = [
         {
@@ -47,9 +48,9 @@
             70 # 'mynixos.com^' filter
             56 # Unbased top level domain filter (homelabs.guru)
           ];
-          filterNumbers =
-            builtins.filter (n: !(builtins.elem n excludedFilters))
-              (builtins.genList (n: n + 1) 71);
+          filterNumbers = builtins.filter (n: !(builtins.elem n excludedFilters)) (
+            builtins.genList (n: n + 1) 71
+          );
         in
         map (num: {
           enabled = true;
