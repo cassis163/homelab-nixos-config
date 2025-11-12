@@ -5,6 +5,12 @@
   services.adguardhome = {
     enable = true;
     settings = {
+      users = [
+        {
+          name = "admin";
+          password = "$2y$10$zQWrY88SvXN3mOIcEuiPxeRRPgDsOYZRsdtE3Gcg84R04Mh/8kyfm";
+        }
+      ];
       http = {
         # You can select any ip and port, just make sure to open firewalls where needed
         address = "127.0.0.1:3000";
