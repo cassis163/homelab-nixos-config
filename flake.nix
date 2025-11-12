@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
     hardware.url = "github:cassis163/nixos-hardware/add-minix-neo-z150-0db";
   };
 
@@ -14,7 +11,6 @@
     inputs@{
       self,
       nixpkgs,
-      home-manager,
       hardware,
       ...
     }:

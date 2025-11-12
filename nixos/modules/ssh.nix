@@ -9,4 +9,6 @@
       AllowUsers = [ "caspera" ];
     };
   };
+
+  environment.enableAllTerminfo = true;
 }
