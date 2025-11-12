@@ -36,7 +36,6 @@ in
           rule = lib.mkDefault "Host(`traefik.${domain}`)";
           service = "api@internal";
           entryPoints = [ "local" ];
-
         };
         adguard = {
           rule = lib.mkDefault "Host(`adguard.${domain}`)";
