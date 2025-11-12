@@ -36,9 +36,13 @@
       # NOTE: This list goes up to 71 as of November 12th 2025
       filters =
         let
+          excludedFilters = [
+            37 # 'No Google' filter (Google, Perplexity AI, etc.)
+            70 # 'mynixos.com^' filter
+          ];
           filterNumbers =
-            # Exclude 'No Google' filter number 37
-            builtins.filter (n: n != 37) (builtins.genList (n: n + 1) 71);
+            builtins.filter (n: !(builtins.elem n excludedFilters))
+              (builtins.genList (n: n + 1) 71);
         in
         map (num: {
           enabled = true;
