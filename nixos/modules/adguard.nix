@@ -33,6 +33,7 @@
       # The following notation uses map
       # to not have to manually create {enabled = true; url = "";} for every filter
       # This is, however, fully optional
+      # NOTE: This list goes up to 71 as of November 12th 2025
       filters = map (num: {
         enabled = true;
         url = "https://adguardteam.github.io/HostlistsRegistry/assets/filter_${toString num}.txt";
