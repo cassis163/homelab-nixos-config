@@ -7,6 +7,7 @@ let
   ];
   services = [
     ./adguard.nix
+    ./qbittorrent.nix
     ./traefik.nix
   ];
 in

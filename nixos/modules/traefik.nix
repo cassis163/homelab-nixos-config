@@ -42,12 +42,22 @@ in
           service = "adguard";
           entryPoints = [ "local" ];
         };
+        qbittorrent = {
+          rule = lib.mkDefault "Host(`qbittorrent.${domain}`)";
+          service = "qbittorrent";
+          entryPoints = [ "local" ];
+        };
       };
 
       services = {
         adguard = {
           loadBalancer = {
             servers = [ { url = "http://localhost:3000"; } ];
+          };
+        };
+        qbittorrent = {
+          loadBalancer = {
+            servers = [ { url = "http://localhost:8081"; } ];
           };
         };
       };

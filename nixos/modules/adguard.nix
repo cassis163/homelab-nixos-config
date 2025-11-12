@@ -41,6 +41,10 @@ in
             domain = "traefik.${domain}";
             answer = localIp;
           }
+          {
+            domain = "qbittorrent.${domain}";
+            answer = localIp;
+          }
         ];
       };
       filtering = {
