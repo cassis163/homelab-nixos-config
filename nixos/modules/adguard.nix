@@ -45,6 +45,7 @@
           excludedFilters = [
             37 # 'No Google' filter (Google, Perplexity AI, etc.)
             70 # 'mynixos.com^' filter
+            56 # Unbased top level domain filter
           ];
           filterNumbers =
             builtins.filter (n: !(builtins.elem n excludedFilters))
