@@ -1,4 +1,8 @@
 { config, ... }:
+let
+  domain = "home.lab";
+  localIp = "192.168.11.119";
+in
 {
   # Set up according to docs: https://wiki.nixos.org/wiki/Adguard_Home
 
@@ -26,6 +30,17 @@
 
           # DNS over TLS upstream
           "tls://dns.quad9.net"
+        ];
+
+        rewrites = [
+          {
+            domain = "adguard.${domain}";
+            answer = localIp;
+          }
+          {
+            domain = "traefik.${domain}";
+            answer = localIp;
+          }
         ];
       };
       filtering = {

@@ -11,7 +11,7 @@ in
 
     staticConfigOptions = {
       api.dashboard = true;
-      api.insecure = false;
+      api.insecure = true;
 
       log = {
         level = "DEBUG";
