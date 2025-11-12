@@ -34,10 +34,16 @@
       # to not have to manually create {enabled = true; url = "";} for every filter
       # This is, however, fully optional
       # NOTE: This list goes up to 71 as of November 12th 2025
-      filters = map (num: {
-        enabled = true;
-        url = "https://adguardteam.github.io/HostlistsRegistry/assets/filter_${toString num}.txt";
-      }) (builtins.genList (n: n + 1) 71);
+      filters =
+        let
+          filterNumbers =
+            # Exclude 'No Google' filter number 37
+            builtins.filter (n: n != 37) (builtins.genList (n: n + 1) 71);
+        in
+        map (num: {
+          enabled = true;
+          url = "https://adguardteam.github.io/HostlistsRegistry/assets/filter_${toString num}.txt";
+        }) filterNumbers;
     };
   };
 
