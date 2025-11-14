@@ -5,36 +5,31 @@
 {
   disko.devices = {
     disk = {
-      nvme0n1 = {
+      main = {
         device = "/dev/nvme0n1";
         type = "disk";
         content = {
-          type = "table";
-          format = "gpt";
-          partitions = [
-            {
-              name = "ESP";
-              start = "1MiB";
-              end = "500MiB";
-              bootable = true;
+          type = "gpt";
+          partitions = {
+            ESP = {
+              end = "500M";
+              type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
               };
-            }
-            {
+            };
+            root = {
               name = "root";
-              start = "500MiB";
-              end = "100%";
-              part-type = "primary";
+              end = "-0";
               content = {
                 type = "filesystem";
                 format = "bcachefs";
                 mountpoint = "/";
               };
-            }
-          ];
+            };
+          };
         };
       };
     };
