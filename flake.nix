@@ -5,6 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     hardware.url = "github:cassis163/nixos-hardware/add-minix-neo-z150-0db";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -12,6 +17,7 @@
       self,
       nixpkgs,
       hardware,
+      disko,
       ...
     }:
     let
@@ -25,6 +31,8 @@
             inherit inputs;
           };
           modules = [
+            disko.nixosModules.disko
+            ./disko-config.nix
             hostPath
           ];
         };
