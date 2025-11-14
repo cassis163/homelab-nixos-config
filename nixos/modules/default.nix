@@ -7,6 +7,7 @@ let
   ];
   services = [
     ./adguard.nix
+    ./nas.nix
     ./qbittorrent.nix
     ./traefik.nix
   ];
