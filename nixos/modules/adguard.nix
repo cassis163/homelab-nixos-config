@@ -75,6 +75,13 @@ in
           enabled = true;
           url = "https://adguardteam.github.io/HostlistsRegistry/assets/filter_${toString num}.txt";
         }) filterNumbers;
+
+      whitelist_filters = [
+        {
+          enabled = true;
+          url = "https://raw.githubusercontent.com/cassis163/adguard-home-allowlist/refs/heads/main/allowlist.txt";
+        }
+      ];
     };
   };
 
