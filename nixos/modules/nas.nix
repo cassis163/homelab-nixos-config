@@ -14,7 +14,7 @@
     statdPort = 4000;
     extraNfsdConfig = '''';
     exports = ''
-      /export         192.168.11.11(r,fsid=0,no_subtree_check)
+      /export         192.168.11.11(rw,fsid=0,no_subtree_check)
       /export/media   192.168.11.11(rw,nohide,insecure,no_subtree_check)
     '';
   };
