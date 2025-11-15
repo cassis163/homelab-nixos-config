@@ -1,7 +1,6 @@
 { lib, config, ... }:
 let
-  domain = "home.lab";
-  localIp = "192.168.11.119";
+  inherit (config.homelab) domain localIp;
 in
 {
   networking.firewall.allowedTCPPorts = [ 80 ];
