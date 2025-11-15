@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  inherit (config.homelab) domain localIp;
+  inherit (config.homelab) domain localNetworkIp;
 in
 {
   networking.firewall.allowedTCPPorts = [ 80 ];
@@ -23,7 +23,7 @@ in
 
       entryPoints = {
         local = {
-          address = "${localIp}:80";
+          address = "${localNetworkIp}:80";
         };
       };
     };

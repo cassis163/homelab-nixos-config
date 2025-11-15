@@ -11,9 +11,16 @@ in
       example = "example.home";
     };
 
-    localIp = mkOption {
+    localEthernetIp = mkOption {
       type = types.str;
       default = "192.168.11.119";
+      description = "Local IP address that services bind to or publish.";
+      example = "192.168.1.100";
+    };
+
+    localNetworkIp = mkOption {
+      type = types.str;
+      default = "192.168.11.121";
       description = "Local IP address that services bind to or publish.";
       example = "192.168.1.100";
     };

@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  inherit (config.homelab) domain localIp;
+  inherit (config.homelab) domain localNetworkIp;
 in
 {
   # Set up according to docs: https://wiki.nixos.org/wiki/Adguard_Home
@@ -34,15 +34,15 @@ in
         rewrites = [
           {
             domain = "adguard.${domain}";
-            answer = localIp;
+            answer = localNetworkIp;
           }
           {
             domain = "traefik.${domain}";
-            answer = localIp;
+            answer = localNetworkIp;
           }
           {
             domain = "qbittorrent.${domain}";
-            answer = localIp;
+            answer = localNetworkIp;
           }
         ];
       };
