@@ -1,5 +1,7 @@
 { config, ... }:
 {
+  # Partially based on https://www.samkwort.com/qbittorrent_nixos_module
+
   services.qbittorrent = {
     enable = true;
     openFirewall = true;
