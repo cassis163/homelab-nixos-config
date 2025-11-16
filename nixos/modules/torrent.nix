@@ -23,14 +23,4 @@
       };
     };
   };
-
-  # Indexing torrents
-  services.bitmagnet = {
-    enable = true;
-    openFirewall = true;
-    user = "caspera";
-    settings = {
-      port = "8082";
-    };
-  };
 }
