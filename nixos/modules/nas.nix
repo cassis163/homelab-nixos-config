@@ -4,6 +4,7 @@
 
   systemd.tmpfiles.rules = [
     "d /export/media 0755 root root -"
+    "d /export/chess 0755 root root -"
   ];
 
   services.nfs.server = {
@@ -14,8 +15,9 @@
     statdPort = 4000;
     extraNfsdConfig = '''';
     exports = ''
-      /export         192.168.11.11(rw,fsid=0,no_subtree_check)
+      /export         192.168.11.0/24(rw,fsid=0,no_subtree_check)
       /export/media   192.168.11.11(rw,nohide,insecure,no_subtree_check)
+      /export/chess   192.168.11.0/24(rw,nohide,insecure,no_subtree_check)
     '';
   };
 

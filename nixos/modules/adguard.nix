@@ -23,7 +23,7 @@ in
         upstream_dns = [
           # Quad9 DNS: https://adguard-dns.io/kb/general/dns-providers/#quad9-dns
 
-          "https://dns.quad9.net/dns-query"=
+          "https://dns.quad9.net/dns-query"
         ];
 
         rewrites = [
