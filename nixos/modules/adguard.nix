@@ -23,12 +23,7 @@ in
         upstream_dns = [
           # Quad9 DNS: https://adguard-dns.io/kb/general/dns-providers/#quad9-dns
 
-          # DNSCrypt upstreams
-          # sdns://AQMAAAAAAAAADDkuOS45Ljk6ODQ0MyBnyEe4yHWM0SAkVUO-dWdG3zTfHYTAC4xHA2jfgh2GPhkyLmRuc2NyeXB0LWNlcnQucXVhZDkubmV0
-          # sdns://AQMAAAAAAAAAElsyNjIwOmZlOjpmZV06ODQ0MyBnyEe4yHWM0SAkVUO-dWdG3zTfHYTAC4xHA2jfgh2GPhkyLmRuc2NyeXB0LWNlcnQucXVhZDkubmV0
-
-          # DNS over TLS upstream
-          "tls://dns.quad9.net"
+          "https://dns.quad9.net/dns-query"=
         ];
 
         rewrites = [
