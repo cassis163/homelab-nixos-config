@@ -3,6 +3,8 @@
   services.openvpn.servers = {
     mullvadVPN = {
       config = ''config /root/nixos/openvpn/mullvad_ch_zrh.conf '';
+      autoStart = true;
+      updateResolvConf = true;
     };
   };
 
