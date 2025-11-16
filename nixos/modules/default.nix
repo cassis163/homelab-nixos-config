@@ -9,7 +9,7 @@ let
   services = [
     ./adguard.nix
     ./nas.nix
-    ./qbittorrent.nix
+    ./torrent.nix
     ./traefik.nix
   ];
 in

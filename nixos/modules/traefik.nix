@@ -46,6 +46,11 @@ in
           service = "qbittorrent";
           entryPoints = [ "local" ];
         };
+        bitmagnet = {
+          rule = lib.mkDefault "Host(`bitmagnet.${domain}`)";
+          service = "bitmagnet";
+          entryPoints = [ "local" ];
+        };
       };
 
       services = {
@@ -57,6 +62,11 @@ in
         qbittorrent = {
           loadBalancer = {
             servers = [ { url = "http://localhost:8081"; } ];
+          };
+        };
+        bitmagnet = {
+          loadBalancer = {
+            servers = [ { url = "http://localhost:8082"; } ];
           };
         };
       };
