@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 let
   moduleSets = import ../modules;
 in
@@ -6,8 +6,8 @@ in
   networking.hostName = "ca-homelab";
 
   imports =
-    moduleSets.base ++
-    moduleSets.services
+    moduleSets.base
+    ++ moduleSets.services
     ++ [
       inputs.hardware.nixosModules.minix-z150-0db
       ./hardware-configuration.nix

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   # See https://nixos.wiki/wiki/NFS
 
@@ -12,6 +12,7 @@
     # fixed rpc.statd port; for firewall
     lockdPort = 4001;
     mountdPort = 4002;
+
     statdPort = 4000;
     extraNfsdConfig = '''';
     exports = ''
