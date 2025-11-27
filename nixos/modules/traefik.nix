@@ -51,6 +51,11 @@ in
           service = "bitmagnet";
           entryPoints = [ "local" ];
         };
+        jellyfin = {
+          rule = lib.mkDefault "Host(`jellyfin.${domain}`)";
+          service = "jellyfin";
+          entryPoints = [ "local" ];
+        };
       };
 
       services = {
@@ -67,6 +72,11 @@ in
         bitmagnet = {
           loadBalancer = {
             servers = [ { url = "http://localhost:8082"; } ];
+          };
+        };
+        jellyfin = {
+          loadBalancer = {
+            servers = [ { url = "http://localhost:8096"; } ];
           };
         };
       };
