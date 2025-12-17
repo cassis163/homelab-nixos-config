@@ -7,6 +7,8 @@
     "d /export/chess 0755 root root -"
   ];
 
+  services.rpcbind.enable = true;
+
   services.nfs.server = {
     enable = true;
     # fixed rpc.statd port; for firewall
