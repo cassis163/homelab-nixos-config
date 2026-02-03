@@ -19,7 +19,7 @@
       Preferences = {
         WebUI = {
           Username = "admin";
-          Password_PBKDF2 = "@ByteArray(9dcC1wlkH1YfFuG9sVp+2Q==:CbX/eqZVqFMy4sOD6Xd26TizQa+8LA1cQzsUTHUFkNcWnKf29hELmlYZFIYADQ9grqKIVu10kjedasPQ82lEwA==)";
+          Password_PBKDF2 = "@ByteArray(oxp+x8Qkkcw2RGEEugCI2w==:taGl0HG/Xtu0D7W6gO82xo1lNerZCaYLGxP83K4fZKTsk0CQrbC2/h8QqIIAaP1DzTzNQDfyQRCQVzbPVcplDA==)";
         };
         General.Locale = "en";
       };
