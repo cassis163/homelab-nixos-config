@@ -20,6 +20,8 @@
         WebUI = {
           Username = "admin";
           Password_PBKDF2 = "@ByteArray(oxp+x8Qkkcw2RGEEugCI2w==:taGl0HG/Xtu0D7W6gO82xo1lNerZCaYLGxP83K4fZKTsk0CQrbC2/h8QqIIAaP1DzTzNQDfyQRCQVzbPVcplDA==)";
+          AuthSubnetWhitelistEnabled = true;
+          AuthSubnetWhitelist = "192.168.0.0/16,10.0.0.0/8";
         };
         General.Locale = "en";
       };
