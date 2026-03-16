@@ -36,11 +36,6 @@ in
           service = "api@internal";
           entryPoints = [ "local" ];
         };
-        adguard = {
-          rule = lib.mkDefault "Host(`adguard.${domain}`)";
-          service = "adguard";
-          entryPoints = [ "local" ];
-        };
         qbittorrent = {
           rule = lib.mkDefault "Host(`qbittorrent.${domain}`)";
           service = "qbittorrent";
@@ -59,11 +54,6 @@ in
       };
 
       services = {
-        adguard = {
-          loadBalancer = {
-            servers = [ { url = "http://localhost:3000"; } ];
-          };
-        };
         qbittorrent = {
           loadBalancer = {
             servers = [ { url = "http://localhost:8081"; } ];
