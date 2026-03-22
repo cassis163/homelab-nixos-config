@@ -31,7 +31,7 @@
   services.bitmagnet = {
      enable = true;
      settings = {
-      http_server.port = 8082;
+      http_server.port = "8082";
      };
   };
 }
