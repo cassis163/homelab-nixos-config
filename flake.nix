@@ -2,7 +2,7 @@
   description = "cassis163's NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     hardware.url = "github:cassis163/nixos-hardware/add-minix-neo-z150-0db";
 

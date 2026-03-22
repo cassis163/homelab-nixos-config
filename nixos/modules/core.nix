@@ -29,7 +29,7 @@ in
     optimise.automatic = lib.mkDefault true;
   };
 
-  system.stateVersion = lib.mkDefault "25.05";
+  system.stateVersion = lib.mkDefault "25.11";
 
   boot.loader = {
     systemd-boot.enable = lib.mkDefault true;
