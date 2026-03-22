@@ -17,14 +17,14 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
+                mountOptions = ["umask=0077"];
               };
             };
             root = {
               size = "100%";
               content = {
-                type = "btrfs";
-                extraArgs = [ "-f" ]; # Override existing partition
+                type = "filesystem";
+                format = "btrfs";
                 mountpoint = "/";
                 mountOptions = [
                   "compress=zstd"
