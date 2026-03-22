@@ -10,7 +10,7 @@ in
     ++ moduleSets.services
     ++ [
       inputs.hardware.nixosModules.minix-z150-0db
-      ./hardware-configuration.nix
+      { hardware.facter.reportPath = ./facter.json; }
     ];
 
 }
