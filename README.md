@@ -3,5 +3,5 @@
 ## Deployment
 
 ```sh
-nixos-anywhere --flake .#homelab --target-host root@${DEVICE-IP}
+nixos-anywhere --generate-hardware-config nixos-facter ./facter.json --flake .#homelab --target-host root@${DEVICE-IP}
 ```
