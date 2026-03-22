@@ -7,6 +7,7 @@
         type = "gpt";
         partitions = {
           ESP = {
+            priority = 1;
             size = "500M";
             type = "EF00";
             content = {
@@ -19,9 +20,13 @@
           root = {
             size = "100%";
             content = {
-              type = "filesystem";
-              format = "btrfs";
+              type = "btrfs";
+              extraArgs = [ "-f" ];
               mountpoint = "/";
+              mountOptions = [
+                "compress=zstd"
+                "noatime"
+              ];
             };
           };
         };
