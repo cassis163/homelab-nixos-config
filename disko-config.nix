@@ -3,7 +3,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-uuid.d24d14c9-b1d4-a14f-a0a2-a0d384508263";
+        device = "/dev/disk/by-diskseq/1";
         content = {
           type = "gpt";
           partitions = {
