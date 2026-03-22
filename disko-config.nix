@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk.main = {
-      device = "/dev/nvme0n1";
+      device = "/dev/disk/by-diskseq/1";
       type = "disk";
       content = {
         type = "gpt";
